@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tading Spark Academy | Master the Markets</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Trading Spark Academy - Domina Forex, Oro e indices con educacion profesional y trading institucional.">
+  <script src="js/i18n.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">TSA</div>
+        <div class="nav-logo-text">TSA <span>Trading</span></div>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" class="active" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="pages/about.html" data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="pages/courses.html" data-i18n="nav.courses">Cursos</a></li>
+        <li><a href="pages/plans.html" data-i18n="nav.pricing">Precios</a></li>
+        <li><a href="pages/testimonials.html" data-i18n="nav.reviews">Reseñas</a></li>
+        <li><a href="pages/contact.html" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="pages/login.html" class="nav-btn-login" data-i18n="nav.signin">Iniciar Sesión</a>
+        <a href="pages/register.html" class="btn btn-gold btn-sm" data-i18n="nav.getstarted">Comenzar</a>
+      </div>
+      
+      <div class="mobile-toggle" id="mobileToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span data-i18n="hero.badge">Señales de Trading en Vivo</span>
+        </div>
+        
+        <h1 class="hero-title">
+          <span data-i18n="hero.title1">Opera Como un</span><br>
+          <span class="text-gold" data-i18n="hero.title2">Profesional</span>
+        </h1>
+        
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Únete a la comunidad élite de traders que dominan forex, indices y oro con nuestras señales premium, mentoría y estrategias comprobadas.</p>
+        
+        <div class="hero-ctas">
+          <a href="pages/register.html" class="btn btn-gold btn-lg">
+            <i class="fas fa-rocket"></i> <span data-i18n="hero.cta1">Comienza a Operar</span>
+          </a>
+          <a href="pages/courses.html" class="btn btn-outline btn-lg">
+            <i class="fas fa-play"></i> <span data-i18n="hero.cta2">Ver Demo</span>
+          </a>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-i18n="hero.stat1.value">350+</div>
+            <div class="hero-stat-label" data-i18n="hero.stat1.label">Traders Activos</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-i18n="hero.stat2.value">89%</div>
+            <div class="hero-stat-label" data-i18n="hero.stat2.label">Tasa de Éxito</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-i18n="hero.stat3.value">$100000</div>
+            <div class="hero-stat-label" data-i18n="hero.stat3.label">Ganancias</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-chart">
+        <div class="chart-window">
+          <div class="chart-header">
+            <div class="chart-pair">
+              <span class="chart-pair-name">XAU/USD</span>
+              <span class="chart-pair-change positive">+3.24%</span>
+            </div>
+            <div class="chart-timeframes">
+              <span class="chart-tf">1H</span>
+              <span class="chart-tf active">4H</span>
+              <span class="chart-tf">1D</span>
+              <span class="chart-tf">1W</span>
+            </div>
+          </div>
+          <div class="chart-body">
+            <canvas id="heroChart" class="chart-canvas"></canvas>
+          </div>
+        </div>
+        
+        <div class="floating-card signal">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="color:var(--green);font-weight:700;font-size:0.8rem;">● BUY</span>
+            <span style="font-size:0.8rem;color:var(--white-70);">EUR/USD</span>
+          </div>
+          <div style="font-size:0.7rem;color:var(--white-50);margin-top:4px;">TP: 1.0920 | SL: 1.0840</div>
+        </div>
+        
+        <div class="floating-card profit">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <i class="fas fa-arrow-trend-up" style="color:var(--green);"></i>
+            <span style="font-size:0.85rem;font-weight:600;color:var(--green);">+$1,240</span>
+          </div>
+          <div style="font-size:0.7rem;color:var(--white-50);margin-top:4px;">Today's Profit</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker Strip -->
+  <div class="ticker-strip">
+    <div class="ticker-content" id="ticker">
+      <div class="ticker-item"><span class="pair">VOLATILITY 75/USD</span><span class="price">67,842.50</span><span class="change up">+2.41%</span></div>
+      <div class="ticker-item"><span class="pair">AUD/USD</span><span class="price">3,521.80</span><span class="change up">+1.87%</span></div>
+      <div class="ticker-item"><span class="pair">EUR/USD</span><span class="price">1.0892</span><span class="change down">-0.12%</span></div>
+      <div class="ticker-item"><span class="pair">GBP/USD</span><span class="price">1.2734</span><span class="change up">+0.34%</span></div>
+      <div class="ticker-item"><span class="pair">XAU/USD</span><span class="price">2,384.60</span><span class="change up">+0.90%</span></div>
+      <div class="ticker-item"><span class="pair">NZD/USD</span><span class="price">172.45</span><span class="change up">+5.23%</span></div>
+      <div class="ticker-item"><span class="pair">USD/JPY</span><span class="price">154.82</span><span class="change down">-0.45%</span></div>
+      <div class="ticker-item"><span class="pair">AAPL</span><span class="price">189.72</span><span class="change up">+1.12%</span></div>
+      <div class="ticker-item"><span class="pair">VOLATILITY 75/USD</span><span class="price">67,842.50</span><span class="change up">+2.41%</span></div>
+      <div class="ticker-item"><span class="pair">AUD/USD</span><span class="price">3,521.80</span><span class="change up">+1.87%</span></div>
+      <div class="ticker-item"><span class="pair">EUR/USD</span><span class="price">1.0892</span><span class="change down">-0.12%</span></div>
+      <div class="ticker-item"><span class="pair">GBP/USD</span><span class="price">1.2734</span><span class="change up">+0.34%</span></div>
+      <div class="ticker-item"><span class="pair">XAU/USD</span><span class="price">2,384.60</span><span class="change up">+0.89%</span></div>
+      <div class="ticker-item"><span class="pair">NZD/USD</span><span class="price">172.45</span><span class="change up">+5.23%</span></div>
+      <div class="ticker-item"><span class="pair">USD/JPY</span><span class="price">154.82</span><span class="change down">-0.45%</span></div>
+      <div class="ticker-item"><span class="pair">AAPL</span><span class="price">189.72</span><span class="change up">+1.12%</span></div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label" data-i18n="features.label">Por Qué Elegirnos</span>
+        <h2 class="section-title"><span data-i18n="features.title">Todo Lo Que Necesitas Para</span> <span class="text-gold" data-i18n="features.title2">Triunfar</span></h2>
+        <p class="section-desc" data-i18n="features.desc">Nuestra plataforma proporciona todas las herramientas, educación y soporte que necesitas para ser un trader consistentemente rentable.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="card feature-card animate-in">
+          <div class="feature-icon"><i class="fas fa-signal"></i></div>
+          <h4 class="feature-title" data-i18n="feature1.title">Señales VIP de Trading</h4>
+          <p class="feature-desc" data-i18n="feature1.desc">Recibe señales de compra/venta en tiempo real de nuestros analistas expertos con niveles precisos de entrada, stop-loss y take-profit.</p>
+        </div>
+        <div class="card feature-card animate-in">
+          <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h4 class="feature-title" data-i18n="feature2.title">Cursos Premium</h4>
+          <p class="feature-desc" data-i18n="feature2.desc">Accede a más de 100 horas de contenido en video estructurado sobre análisis técnico, gestión de riesgo y estrategias avanzadas.</p>
+        </div>
+        <div class="card feature-card animate-in">
+          <div class="feature-icon"><i class="fas fa-users"></i></div>
+          <h4 class="feature-title" data-i18n="feature3.title">Comunidad Élite</h4>
+          <p class="feature-desc" data-i18n="feature3.desc">Únete a Trading Spark Academy y aprende Forex, Oro e Indices con educacion profesional y analisis institucional.</p>
+        </div>
+        <div class="card feature-card animate-in">
+          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <h4 class="feature-title" data-i18n="feature4.title">Sesiones de Trading en Vivo</h4>
+          <p class="feature-desc" data-i18n="feature4.desc">Aprende Forex, Oro e Indices con analisis en vivo y explicaciones paso a paso.</p>
+        </div>
+        <div class="card feature-card animate-in">
+          <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+          <h4 class="feature-title" data-i18n="feature5.title">Gestión de Riesgo</h4>
+          <p class="feature-desc" data-i18n="feature5.desc">Domina técnicas profesionales de gestión de riesgo que protegen tu capital y maximizan la rentabilidad a largo plazo.</p>
+        </div>
+        <div class="card feature-card animate-in">
+          <div class="feature-icon"><i class="fas fa-headset"></i></div>
+          <h4 class="feature-title" data-i18n="feature6.title">Mentoría Personalizada</h4>
+          <p class="feature-desc" data-i18n="feature6.desc">Aprende paso a paso como analizar el mercado y desarrollar una estrategia de trading profesional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Banner -->
+  <section class="section section-dark">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;text-align:center;">
+        <div class="animate-in">
+          <div style="font-family:var(--font-display);font-size:3rem;font-weight:800;color:var(--gold-500);">350</div>
+          <p style="font-size:0.9rem;margin-top:8px;" data-i18n="stats.members">Miembros Activos</p>
+        </div>
+        <div class="animate-in">
+          <div style="font-family:var(--font-display);font-size:3rem;font-weight:800;color:var(--gold-500);">89%</div>
+          <p style="font-size:0.9rem;margin-top:8px;" data-i18n="stats.accuracy">Precisión de Señales</p>
+        </div>
+        <div class="animate-in">
+          <div style="font-family:var(--font-display);font-size:3rem;font-weight:800;color:var(--gold-500);">200+</div>
+          <p style="font-size:0.9rem;margin-top:8px;" data-i18n="stats.lessons">Video Lecciones</p>
+        </div>
+        <div class="animate-in">
+          <div style="font-family:var(--font-display);font-size:3rem;font-weight:800;color:var(--gold-500);">24/7</div>
+          <p style="font-size:0.9rem;margin-top:8px;" data-i18n="stats.support">Soporte Disponible</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label" data-i18n="pricing.label">Membresía</span>
+        <h2 class="section-title"><span data-i18n="pricing.title">Elige Tu</span> <span class="text-gold" data-i18n="pricing.title2">Camino</span></h2>
+        <p class="section-desc" data-i18n="pricing.desc">Planes flexibles diseñados para todo nivel de trader. Cancela cuando quieras.</p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="card pricing-card animate-in">
+          <div class="pricing-plan" data-i18n="pricing.basic">Básico</div>
+          <div class="pricing-price">$30<span>/mo</span></div>
+          <p class="pricing-period" data-i18n="pricing.monthly">Facturación mensual</p>
+          <ul class="pricing-features">
+            <li data-i18n="pf.basic1">Análisis Diario del Mercado</li>
+            <li data-i18n="pf.basic2">Señales Básicas de Trading</li>
+            <li data-i18n="pf.basic3">Acceso a la Comunidad</li>
+            <li data-i18n="pf.basic4">10 Video Cursos</li>
+            <li class="disabled" data-i18n="pf.basic5">Señales VIP</li>
+            <li class="disabled" data-i18n="pf.basic6">Mentoría Personalizada</li>
+          </ul>
+          <a href="pages/register.html" class="btn btn-outline w-full" style="justify-content:center;" data-i18n="pricing.getstarted">Comenzar</a>
+        </div>
+        
+        <div class="card pricing-card featured animate-in">
+          <div class="pricing-badge" data-i18n="pricing.popular">Más Popular</div>
+          <div class="pricing-plan" data-i18n="pricing.pro">Pro</div>
+          <div class="pricing-price">$50<span>/mo</span></div>
+          <p class="pricing-period" data-i18n="pricing.monthly">Facturación mensual</p>
+          <ul class="pricing-features">
+            <li data-i18n="pf.pro1">Todo lo del Plan Básico</li>
+            <li data-i18n="pf.pro2">Señales Premium de Trading</li>
+            <li data-i18n="pf.pro3">Sesiones de Trading en Vivo</li>
+            <li data-i18n="pf.pro4">Todos los Video Cursos</li>
+            <li data-i18n="pf.pro5">Canal VIP de Discord</li>
+            <li class="disabled" data-i18n="pf.pro6">Mentoría Personalizada</li>
+          </ul>
+          <a href="pages/register.html" class="btn btn-gold w-full" style="justify-content:center;" data-i18n="pricing.getstarted">Comenzar</a>
+        </div>
+        
+        <div class="card pricing-card animate-in">
+          <div class="pricing-plan" data-i18n="pricing.vip">VIP</div>
+          <div class="pricing-price">$100<span>/mo</span></div>
+          <p class="pricing-period" data-i18n="pricing.monthly">Facturación mensual</p>
+          <ul class="pricing-features">
+            <li data-i18n="pf.vip1">Todo lo del Plan Pro</li>
+            <li data-i18n="pf.vip2">Señales VIP Élite</li>
+            <li data-i18n="pf.vip3">Mentoría Personalizada</li>
+            <li data-i18n="pf.vip4">Grupo Privado de Telegram</li>
+            <li data-i18n="pf.vip5">Soporte Prioritario</li>
+            <li data-i18n="pf.vip6">Contenido Exclusivo</li>
+          </ul>
+          <a href="pages/register.html" class="btn btn-outline w-full" style="justify-content:center;" data-i18n="pricing.getstarted">Comenzar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Preview -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label" data-i18n="testimonials.label">Testimonios</span>
+        <h2 class="section-title"><span data-i18n="testimonials.title">La Confianza de</span> <span class="text-gold" data-i18n="testimonials.title2">Miles</span></h2>
+        <p class="section-desc" data-i18n="testimonials.desc">Descubre lo que dicen nuestros miembros sobre su experiencia en Trading Spark Academy.</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="card testimonial-card animate-in">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text" data-i18n="testimonial1.text">"Pasé de perder dinero cada mes a ganar consistentemente $1,000-2,000. Las señales VIP son increíblemente precisas y el soporte de la comunidad es inigualable."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MR</div>
+            <div class="testimonial-info">
+              <h5>Marcus Rodriguez</h5>
+              <p data-i18n="testimonial1.role">Miembro VIP • 8 meses</p>
+            </div>
+          </div>
+        </div>
+        <div class="card testimonial-card animate-in">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text" data-i18n="testimonial2.text">"Los cursos estructurados me llevaron de principiante total a trader seguro en solo 3 meses. Trading Spark Academy realmente se preocupa por tu éxito."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SK</div>
+            <div class="testimonial-info">
+              <h5>Sarah Kim</h5>
+              <p data-i18n="testimonial2.role">Miembro Pro • 5 meses</p>
+            </div>
+          </div>
+        </div>
+        <div class="card testimonial-card animate-in">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text" data-i18n="testimonial3.text">"La mejor educación en trading que he pagado. Solo las sesiones en vivo valen 10x la membresía. Mi tasa de éxito subió del 45% al 82%."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JT</div>
+            <div class="testimonial-info">
+              <h5>James Thompson</h5>
+              <p data-i18n="testimonial3.role">Miembro VIP • 1 año</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="text-align:center;">
+    <div class="container">
+      <div class="animate-in">
+        <span class="section-label" data-i18n="cta.label">¿Listo Para Empezar?</span>
+        <h2 class="section-title" style="margin-bottom:20px;"><span data-i18n="cta.title">Únete a la</span> <span class="text-gold" data-i18n="cta.title2">Élite</span> <span data-i18n="cta.title3">Hoy</span></h2>
+        <p class="section-desc" style="margin-bottom:40px;" data-i18n="cta.desc">Comienza tu camino hacia la libertad financiera con nuestras estrategias probadas y mentoría experta.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <a href="pages/register.html" class="btn btn-gold btn-lg"><i class="fas fa-crown"></i> <span data-i18n="cta.join">Únete Ahora</span></a>
+          <a href="pages/contact.html" class="btn btn-outline btn-lg"><i class="fas fa-comments"></i> <span data-i18n="cta.talk">Contáctanos</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon">TSA</div>
+          <div class="nav-logo-text">TSA <span>Trading</span></div>
+        </a>
+        <p data-i18n="footer.desc">Educación premium en trading y señales para traders que exigen excelencia. Domina los mercados con confianza.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social"><i class="fab fa-discord"></i></a>
+          <a href="#" class="footer-social"><i class="fab fa-telegram"></i></a>
+          <a href="#" class="footer-social"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-social"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="footer-social"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.platform">Plataforma</h4>
+        <ul>
+          <li><a href="pages/courses.html" data-i18n="footer.courses">Cursos</a></li>
+          <li><a href="pages/plans.html" data-i18n="footer.pricing">Precios</a></li>
+          <li><a href="pages/dashboard.html" data-i18n="footer.dashboard">Panel</a></li>
+          <li><a href="pages/signals.html" data-i18n="footer.signals">Señales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.company">Empresa</h4>
+        <ul>
+          <li><a href="pages/about.html" data-i18n="footer.about">Nosotros</a></li>
+          <li><a href="pages/testimonials.html" data-i18n="footer.reviews">Reseñas</a></li>
+          <li><a href="pages/contact.html" data-i18n="footer.contact">Contacto</a></li>
+          <li><a href="#" data-i18n="footer.careers">Empleos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.legal">Legal</h4>
+        <ul>
+          <li><a href="#" data-i18n="footer.terms">Términos de Servicio</a></li>
+          <li><a href="#" data-i18n="footer.privacy">Política de Privacidad</a></li>
+          <li><a href="#" data-i18n="footer.risk">Aviso de Riesgo</a></li>
+          <li><a href="#" data-i18n="footer.refund">Política de Reembolso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.rights">© 2024 Trading Spark. Todos los derechos reservados.</p>
+      <p data-i18n="footer.disclaimer">El trading implica riesgo. Los resultados pasados no garantizan resultados futuros.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

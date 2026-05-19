@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Spark Academy | Dashboard</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="../js/i18n.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <a href="../index.html" class="nav-logo">
+          <div class="nav-logo-icon" style="width:36px;height:36px;font-size:1rem;">DF</div>
+          <div class="nav-logo-text" style="font-size:1.1rem;">DF <span>Trading</span></div>
+        </a>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="#" class="active" data-section="overview"><span class="nav-icon"><i class="fas fa-th-large"></i></span> <span data-i18n="dash.overview">Resumen</span></a></li>
+        <li><a href="#" data-section="signals"><span class="nav-icon"><i class="fas fa-signal"></i></span> <span data-i18n="dash.signals">Señales de Trading</span></a></li>
+        <li><a href="#" data-section="courses"><span class="nav-icon"><i class="fas fa-play-circle"></i></span> <span data-i18n="dash.courses">Video Cursos</span></a></li>
+        <li><a href="#" data-section="community"><span class="nav-icon"><i class="fas fa-users"></i></span> <span data-i18n="dash.community">Comunidad</span></a></li>
+        <li><a href="#" data-section="notifications"><span class="nav-icon"><i class="fas fa-bell"></i></span> <span data-i18n="dash.notifications">Notificaciones</span></a></li>
+        <li><a href="#" data-section="settings"><span class="nav-icon"><i class="fas fa-cog"></i></span> <span data-i18n="dash.settings">Configuración</span></a></li>
+      </ul>
+      <div style="position:absolute;bottom:24px;left:12px;right:12px;">
+        <div class="card" style="padding:16px;background:rgba(212,175,55,0.05);border-color:rgba(212,175,55,0.2);">
+          <p style="font-size:0.75rem;color:var(--gold-500);font-weight:600;margin-bottom:8px;" data-i18n="dash.pro">PLAN PRO</p>
+          <p style="font-size:0.8rem;margin-bottom:12px;" data-i18n="dash.upgrade.text">Mejora a VIP para acceso a mentoría</p>
+          <a href="plans.html" class="btn btn-gold btn-sm w-full" style="justify-content:center;font-size:0.8rem;" data-i18n="dash.upgrade.btn">Mejorar Plan</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="dash-header">
+        <div class="dash-greeting">
+          <h2 data-i18n="dash.greeting">Buenos Días, Trader</h2>
+          <p data-i18n="dash.subtitle">Aquí está tu resumen de trading de hoy</p>
+        </div>
+        <div class="dash-user">
+          <div class="dash-user-info">
+            <h5>John Doe</h5>
+            <p data-i18n="dash.member">Miembro Pro</p>
+          </div>
+          <div class="dash-user-avatar">JD</div>
+        </div>
+      </div>
+
+      <div class="dash-stats">
+        <div class="stat-card">
+          <div class="stat-icon gold"><i class="fas fa-signal" style="color:var(--gold-500);"></i></div>
+          <div class="stat-info"><h4>24</h4><p data-i18n="dash.stat.signals">Señales </p></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon green"><i class="fas fa-chart-line" style="color:var(--green);"></i></div>
+          <div class="stat-info"><h4>89%</h4><p data-i18n="dash.stat.winrate">Tasa de Éxito</p></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon blue"><i class="fas fa-graduation-cap" style="color:var(--blue);"></i></div>
+          <div class="stat-info"><h4>67%</h4><p data-i18n="dash.stat.progress">Progreso de Cursos</p></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon purple"><i class="fas fa-trophy" style="color:#9c27b0;"></i></div>
+          <div class="stat-info"><h4>$4,820</h4><p data-i18n="dash.stat.pnl">P&L Mensual</p></div>
+        </div>
+      </div>
+
+      <div class="signals-section">
+        <div class="signals-header">
+          <h3><i class="fas fa-signal" style="color:var(--gold-500);margin-right:8px;"></i> <span data-i18n="dash.signals.title">Señales de Trading Activas</span></h3>
+          <div style="display:flex;gap:8px;">
+            <span class="chart-tf active">All</span>
+            <span class="chart-tf">Forex</span>
+            <span class="chart-tf">Indices</span>
+          </div>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="signal-table">
+            <thead>
+              <tr>
+                <th data-i18n="dash.table.pair">Par</th>
+                <th data-i18n="dash.table.type">Tipo</th>
+                <th data-i18n="dash.table.entry">Entrada</th>
+                <th data-i18n="dash.table.sl">Stop Loss</th>
+                <th data-i18n="dash.table.tp">Take Profit</th>
+                <th data-i18n="dash.table.status">Estado</th>
+                <th data-i18n="dash.table.pnl">P&L</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;">EUR/USD</td>
+                <td><span class="signal-badge buy"></span></td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--red);">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--green);">0</td>
+                <td><span style="color:var(--green);font-size:0.8rem;font-weight:600;">● <span data-i18n="dash.status.running" >/span></span></td>
+                <td style="color:var(--green);font-weight:600;">+$0</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;">VOLATILITY 75/USDT</td>
+                <td><span class="signal-badge buy"></span></td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--red);">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--green);">0</td>
+                <td><span style="color:var(--green);font-size:0.8rem;font-weight:600;">● <span data-i18n="dash.status.running"></span></span></td>
+                <td style="color:var(--green);font-weight:600;">+$0</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;">GBP/JPY</td>
+                <td><span class="signal-badge sell"></span></td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--red);">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--green);">0</td>
+                <td><span style="color:var(--gold-500);font-size:0.8rem;font-weight:600;">● <span data-i18n="dash.status.pending">0</span></span></td>
+                <td style="color:var(--white-50);">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;">XAU/USD</td>
+                <td><span class="signal-badge buy"></span></td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--red);">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--green);">0</td>
+                <td><span style="color:var(--green);font-size:0.8rem;font-weight:600;">● <span data-i18n="dash.status.tphit"></span></span></td>
+                <td style="color:var(--green);font-weight:600;">+$0</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;">AUD/USDT</td>
+                <td><span class="signal-badge sell"></span></td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--red);">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--green);">0</td>
+                <td><span style="color:var(--red);font-size:0.8rem;font-weight:600;">● <span data-i18n="dash.status.slhit"></span></span></td>
+                <td style="color:var(--red);font-weight:600;">-$0</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;">NAS100</td>
+                <td><span class="signal-badge buy">< /span></td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--red);">0</td>
+                <td style="font-family:var(--font-mono);font-size:0.85rem;color:var(--green);">0</td>
+                <td><span style="color:var(--green);font-size:0.8rem;font-weight:600;">● <span data-i18n="dash.status.running">A</span></span></td>
+                <td style="color:var(--green);font-weight:600;">+$0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:30px;">
+        <div class="signals-section">
+          <div class="signals-header">
+            <h3><i class="fas fa-play-circle" style="color:var(--gold-500);margin-right:8px;"></i> <span data-i18n="dash.courses.title">Cursos Actuales</span></h3>
+            <a href="courses.html" class="form-link" style="font-size:0.85rem;" data-i18n="dash.courses.viewall">Ver Todos</a>
+          </div>
+          <div style="margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-size:0.9rem;font-weight:500;" data-i18n="course1.title">Masterclass de Acción del Precio</span>
+              <span style="font-size:0.8rem;color:var(--gold-500);">78%</span>
+            </div>
+            <div class="course-progress"><div class="course-progress-bar" style="width:78%;"></div></div>
+          </div>
+          <div style="margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-size:0.9rem;font-weight:500;" data-i18n="course3.title">Gestión de Riesgo Pro</span>
+              <span style="font-size:0.8rem;color:var(--gold-500);">45%</span>
+            </div>
+            <div class="course-progress"><div class="course-progress-bar" style="width:45%;"></div></div>
+          </div>
+          <div style="margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-size:0.9rem;font-weight:500;" data-i18n="course2.title">Fundamentos de Trading Indices</span>
+              <span style="font-size:0.8rem;color:var(--gold-500);">92%</span>
+            </div>
+            <div class="course-progress"><div class="course-progress-bar" style="width:92%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-size:0.9rem;font-weight:500;" data-i18n="course4.title">Trading Avanzado con Fibonacci</span>
+              <span style="font-size:0.8rem;color:var(--gold-500);">12%</span>
+            </div>
+            <div class="course-progress"><div class="course-progress-bar" style="width:12%;"></div></div>
+          </div>
+        </div>
+
+        <div class="signals-section">
+          <div class="signals-header">
+            <h3><i class="fas fa-bell" style="color:var(--gold-500);margin-right:8px;"></i> <span data-i18n="dash.notif.title">Notificaciones Recientes</span></h3>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;align-items:start;gap:12px;padding:12px;background:var(--black-600);border-radius:8px;">
+              <div style="width:8px;height:8px;background:var(--green);border-radius:50%;margin-top:6px;flex-shrink:0;"></div>
+              <div><p style="font-size:0.85rem;color:var(--white-90);font-weight:500;" data-i18n="dash.notif1">Nueva Señal VIP: COMPRA EUR/USD</p><p style="font-size:0.75rem;color:var(--white-30);margin-top:3px;" data-i18n="dash.notif1.time">Hace 2 minutos</p></div>
+            </div>
+            <div style="display:flex;align-items:start;gap:12px;padding:12px;background:var(--black-600);border-radius:8px;">
+              <div style="width:8px;height:8px;background:var(--gold-500);border-radius:50%;margin-top:6px;flex-shrink:0;"></div>
+              <div><p style="font-size:0.85rem;color:var(--white-90);font-weight:500;" data-i18n="dash.notif2">Sesión en Vivo comienza en 30 min</p><p style="font-size:0.75rem;color:var(--white-30);margin-top:3px;" data-i18n="dash.notif2.time">Hace 28 minutos</p></div>
+            </div>
+            <div style="display:flex;align-items:start;gap:12px;padding:12px;background:var(--black-600);border-radius:8px;">
+              <div style="width:8px;height:8px;background:var(--blue);border-radius:50%;margin-top:6px;flex-shrink:0;"></div>
+              <div><p style="font-size:0.85rem;color:var(--white-90);font-weight:500;" data-i18n="dash.notif3">¡Señal XAU/USD alcanzó Take Profit!</p><p style="font-size:0.75rem;color:var(--white-30);margin-top:3px;" data-i18n="dash.notif3.time">Hace 1 hora</p></div>
+            </div>
+            <div style="display:flex;align-items:start;gap:12px;padding:12px;background:var(--black-600);border-radius:8px;">
+              <div style="width:8px;height:8px;background:var(--white-30);border-radius:50%;margin-top:6px;flex-shrink:0;"></div>
+              <div><p style="font-size:0.85rem;color:var(--white-90);font-weight:500;" data-i18n="dash.notif4">Nuevo curso añadido: Conceptos ICT</p><p style="font-size:0.75rem;color:var(--white-30);margin-top:3px;" data-i18n="dash.notif4.time">Hace 3 horas</p></div>
+            </div>
+            <div style="display:flex;align-items:start;gap:12px;padding:12px;background:var(--black-600);border-radius:8px;">
+              <div style="width:8px;height:8px;background:var(--white-30);border-radius:50%;margin-top:6px;flex-shrink:0;"></div>
+              <div><p style="font-size:0.85rem;color:var(--white-90);font-weight:500;" data-i18n="dash.notif5">Análisis semanal del mercado publicado</p><p style="font-size:0.75rem;color:var(--white-30);margin-top:3px;" data-i18n="dash.notif5.time">Hace 5 horas</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div class="card" style="padding:30px;display:flex;align-items:center;gap:20px;">
+          <div style="width:56px;height:56px;background:rgba(88,101,242,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;">
+            <i class="fab fa-discord" style="font-size:1.6rem;color:#5865F2;"></i>
+          </div>
+          <div style="flex:1;">
+            <h4 style="font-family:var(--font-body);font-size:1rem;font-weight:700;margin-bottom:4px;" data-i18n="dash.discord.title">Comunidad Discord</h4>
+            <p style="font-size:0.85rem;" data-i18n="dash.discord.desc">12,847 miembros en línea</p>
+          </div>
+          <a href="#" class="btn btn-dark btn-sm" data-i18n="dash.join">Unirse</a>
+        </div>
+        <div class="card" style="padding:30px;display:flex;align-items:center;gap:20px;">
+          <div style="width:56px;height:56px;background:rgba(0,136,204,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;">
+            <i class="fab fa-telegram" style="font-size:1.6rem;color:#0088cc;"></i>
+          </div>
+          <div style="flex:1;">
+            <h4 style="font-family:var(--font-body);font-size:1rem;font-weight:700;margin-bottom:4px;" data-i18n="dash.telegram.title">Grupo VIP de Telegram</h4>
+            <p style="font-size:0.85rem;" data-i18n="dash.telegram.desc">Canal exclusivo de señales</p>
+          </div>
+          <a href="#" class="btn btn-dark btn-sm" data-i18n="dash.join">Unirse</a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>
